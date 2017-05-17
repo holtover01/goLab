@@ -97,9 +97,24 @@ func main() {
     whatAmI(1)
     whatAmI("hey")
 
+    //arrays
+    var arrayTest [5]int
+    fmt.Println("emp:", arrayTest) //emp: [0 0 0 0 0]
+    //good news they follow standard array index
+    arrayTest[4] = 100
 
+    fmt.Println("len:", len(arrayTest))//returns 5 = array size
 
+    assignArray := [5]int{1, 2, 3, 4, 5}
+    fmt.Println(assignArray)
 
+    var twoD [2][3] int
+    for i := 0; i < 2; i++ {
+        for j := 0; j < 3; j++ {
+            twoD[i][j] = i + j
+        }
+    }
+    fmt.Println("2d: ", twoD)
     //There is no ternary if statement in Go
     // https://gobyexample.com/arrays
 
