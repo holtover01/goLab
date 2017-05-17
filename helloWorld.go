@@ -1,5 +1,10 @@
 package main
+
 import "fmt"
+import "math"
+
+const s string = "constant"
+
 func main() {
     fmt.Println("hello world")
     fmt.Println("go" + "lang")
@@ -31,7 +36,38 @@ func main() {
     f := "short"
     fmt.Println(f)
 
-    //https://gobyexample.com/constants
+
+    const n = 500000000
+    const d = 3e20 / n
+    fmt.Println(d)
+    fmt.Println(int64(d))
+    fmt.Println(math.Sin(n))
+
+    i := 1
+    for i <= 3 {
+        fmt.Println(i)
+        i = i + 1
+    }
+
+    for j := 7; j <= 9; j++ {
+        fmt.Println(j)
+    }
+    for n := 0; n <= 5; n++ {
+        if n%2 == 0 {
+            continue
+        }
+        fmt.Println(n)
+    }
+
+    if num := 9; num < 0 {
+        fmt.Println(num, "is negative")
+    } else if num < 10 {
+        fmt.Println(num, "has 1 digit")
+    } else {
+        fmt.Println(num, "has multiple digits")
+    }
+    //There is no ternary if in Go
+    // https://gobyexample.com/constants
 
     //https://github.com/golang/example
 
