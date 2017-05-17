@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 import "math"
+import "time"
 
 const s string = "constant"
 
@@ -25,8 +26,8 @@ func main() {
     fmt.Println(b, c)
 
     //Go will infer the type of initialized variables.
-    var d = true
-    fmt.Println(d)
+    var testTrue = true
+    fmt.Println(testTrue)
 
     //Variables declared without a corresponding initialization are zero-valued. For example, the zero value for an int is 0.
     var e int
@@ -66,8 +67,41 @@ func main() {
     } else {
         fmt.Println(num, "has multiple digits")
     }
-    //There is no ternary if in Go
-    // https://gobyexample.com/constants
+
+    switch time.Now().Weekday() {
+    case time.Saturday, time.Sunday:
+        fmt.Println("It's the weekend")
+    default:
+        fmt.Println("It's a weekday")
+    }
+
+    t := time.Now()
+    switch {
+    case t.Hour() < 12:
+        fmt.Println("It's before noon")
+    default:
+        fmt.Println("It's after noon")
+    }
+
+    whatAmI := func(i interface{}) {
+        switch t := i.(type) {
+        case bool:
+            fmt.Println("I'm a bool")
+        case int:
+            fmt.Println("I'm an int")
+        default:
+            fmt.Printf("Don't know type %T\n", t)
+        }
+    }
+    whatAmI(true)
+    whatAmI(1)
+    whatAmI("hey")
+
+
+
+
+    //There is no ternary if statement in Go
+    // https://gobyexample.com/arrays
 
     //https://github.com/golang/example
 
