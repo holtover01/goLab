@@ -7,6 +7,15 @@ import "time"
 const s string = "constant"
 
 func main() {
+  var a, b, c = 3, 4, "foo"//here I am assigned multiple variables in a single line
+
+   fmt.Println(a)
+   fmt.Println(b)
+   fmt.Println(c)
+   fmt.Printf("a is of type %T\n", a)
+   fmt.Printf("b is of type %T\n", b)
+   fmt.Printf("c is of type %T\n", c)
+
     fmt.Println("hello world")
     fmt.Println("go" + "lang")
     //Integers and floats.
